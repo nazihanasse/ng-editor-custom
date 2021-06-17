@@ -241,14 +241,13 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
   writeValue(value: any): void {
 
     if ((!value || value === '<br>' || value === '') !== this.showPlaceholder) {
-      this.togglePlaceholder(this.showPlaceholder);
+   //   this.togglePlaceholder(this.showPlaceholder);
     }
 
     if (value === undefined || value === '' || value === '<br>') {
       value = null;
     }
-
-    this.refreshView(value);
+    if(value)    this.refreshView(value);
   }
 
   /**
